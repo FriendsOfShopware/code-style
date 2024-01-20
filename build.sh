@@ -19,7 +19,7 @@ if [[ ! -d db ]]; then
   git clone -b ubuntu-23.10-php https://github.com/shyim/chisel-releases.git db
 fi
 
-chisel cut --arch=$arch --release ./db --root rootfs/ php8.2-cli_base php8.2-common_all-cli php8.2-common_phar-cli php8.2-mbstring_cli php8.2-xml_dom-cli dash_bins
+chisel cut --arch=$arch --release ./db --root rootfs/ php8.2-cli_base php8.2-common_all-cli php8.2-common_phar-cli php8.2-mbstring_cli php8.2-intl_cli php8.2-xml_dom-cli dash_bins
 
 docker build --platform "linux/${arch}" -t "ghcr.io/friendsofshopware/code-style:latest-${arch}" .
 
