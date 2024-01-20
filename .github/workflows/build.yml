@@ -35,6 +35,6 @@ jobs:
       - name: Login into Github Docker Registery
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - run: docker manifest create friendsofshopware/code-style:latest --amend friendsofshopware/code-style-amd64 --amend friendsofshopware/code-style-arm64
+      - run: docker manifest create ghcr.io/friendsofshopware/code-style:latest --amend ghcr.io/friendsofshopware/code-style-amd64 --amend ghcr.io/friendsofshopware/code-style-arm64
 
-      - run: docker manifest push friendsofshopware/code-style:latest
+      - run: docker manifest push ghcr.io/friendsofshopware/code-style:latest

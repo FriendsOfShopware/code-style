@@ -21,8 +21,8 @@ fi
 
 chisel cut --arch=$arch --release ./db --root rootfs/ php8.2-cli_base php8.2-common_all-cli php8.2-common_phar-cli php8.2-mbstring_cli php8.2-xml_dom-cli dash_bins
 
-docker build --platform "linux/${arch}" -t "friendsofshopware/code-style:latest-${arch}" .
+docker build --platform "linux/${arch}" -t "ghcr.io/friendsofshopware/code-style:latest-${arch}" .
 
 if [[ "$params" == "--push" ]]; then
-  docker push "friendsofshopware/code-style:latest-${arch}"
+  docker push "ghcr.io/friendsofshopware/code-style:latest-${arch}"
 fi
