@@ -8,7 +8,7 @@
             "email": "s.sayakci@shopware.com"
         }
     ],
-    "require-dev": {
+    "require": {
         "friendsofphp/php-cs-fixer": "^3.48"
     }
 }
