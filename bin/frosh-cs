@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+$locations = [
+    __DIR__ . '/php-cs-fixer',
+    dirname(__DIR__) . '/vendor/bin/php-cs-fixer',
+];
+
+$codeStyleDirectory = dirname(__DIR__, 2) === 'vendor' ? dirname(__DIR__) . '/frosh/code-style' : dirname(__DIR__);
+
+if (count($_SERVER['argv']) >= 2) {
+    array_splice($_SERVER['argv'], 2, 0, '--config=' . $codeStyleDirectory . '/php-cs-fixer.config.php');
+}
+
+foreach ($locations as $file) {
+    if (file_exists($file)) {
+        $_SERVER['argv'][0] = $file;
+        require $file;
+    }
+};
+
